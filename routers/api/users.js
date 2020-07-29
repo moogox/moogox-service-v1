@@ -5,6 +5,7 @@ const keys = require("../../config/keys");
 const User = require("../../models/User");
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
+const Wallet = require("../../models/Wallet");
 
 router.post("/login", (req, res) => {
   const email = req.body.email;
@@ -151,3 +152,25 @@ router.post("/SendEmailConfirmation", (req, res) => {
 });
 
 module.exports = router;
+
+router.post("/setUserActivityStatus", (req, res) => {
+  User.findOneAndUpdate(
+    { _id: req.body._id },
+    { $set: { activityStatus: true } }
+  )
+    .then((user) => {
+      const NewWallet = new Wallet({
+        user: req.body._id,
+      });
+      NewWallet.save()
+        .then((walletResult) => {
+          res.json({ walletResult, user });
+        })
+        .catch((err) => {
+          res.status(404).json({ err });
+        });
+    })
+    .catch((err) => {
+      res.status(404).json({ msg: "error when finding and update user" });
+    });
+});
