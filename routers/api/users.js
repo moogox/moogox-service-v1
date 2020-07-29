@@ -115,7 +115,7 @@ router.post("/SendEmailConfirmation", (req, res) => {
     dengan kunjungi link di bawah ini</p>
   <br />
   <div style="text-align: center;">
-    <a class=”link” href="http://localhost:3000/user/verification/${userId}" target="_blank"
+    <a class=”link” href="http://localhost:3000/email-verification/${userId}" target="_blank"
       style="background-color:#8BC341;padding:8px 16px;color:white;text-decoration:none;border-radius:5px">
       Konfirmasi email
     </a>
