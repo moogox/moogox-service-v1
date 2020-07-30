@@ -4,6 +4,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const users = require("./routers/api/users");
+const transactions = require("./routers/api/transactions");
 
 const app = express();
 var fs = require("fs");
@@ -33,6 +34,7 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use("/api/users", cors(corsOptions), users);
+app.use("/api/transactions", cors(corsOptions), transactions);
 
 const port = process.env.PORT || 5000;
 app.listen(port, console.log(`Server Already Running On Port ${port}`));

@@ -151,8 +151,6 @@ router.post("/SendEmailConfirmation", (req, res) => {
     .catch((err) => res.status(404).json(err));
 });
 
-module.exports = router;
-
 router.post("/setUserActivityStatus", (req, res) => {
   User.findOneAndUpdate(
     { _id: req.body._id },
@@ -174,3 +172,5 @@ router.post("/setUserActivityStatus", (req, res) => {
       res.status(404).json({ msg: "error when finding and update user" });
     });
 });
+
+module.exports = router;
