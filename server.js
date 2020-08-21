@@ -22,6 +22,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("upload"));
 
+app.use(cors());
+
 app.get("/", (req, res) => {
   res.send(
     "this server owned by moogox.id if you try to using this server without official permission of moogox.id you will get the  severe criminal penalti "
