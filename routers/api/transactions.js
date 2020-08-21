@@ -22,7 +22,6 @@ router.post("/order/new", (req, res) => {
         vehicleType: req.body.vehicleType,
         merk: req.body.merk,
         plat: req.body.plat,
-        vehicleImg: req.body.vehicleImg,
         orderDescription: req.body.orderDescription,
         status: req.body.status,
         totalPayment: req.body.totalPayment,

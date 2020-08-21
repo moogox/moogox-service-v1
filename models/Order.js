@@ -34,10 +34,6 @@ const OrderSchema = new Schema({
     type: String,
     required: true,
   },
-  vehicleImg: {
-    type: String,
-    required: true,
-  },
   orderDescription: {
     type: String,
     required: true,
