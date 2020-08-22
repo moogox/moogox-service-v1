@@ -15,7 +15,7 @@ router.post("/login", (req, res) => {
       return res.status(404).json({ email: "Email Not Found" });
     } else {
       if (!user.activityStatus) {
-        return res.status(404).json({ msg: "user belum konfirmasi email" });
+        return res.status(404).json({ msg: "KENAPA" });
       } else {
         bcrypt.compare(password, user.password).then((isMatch) => {
           if (isMatch) {
