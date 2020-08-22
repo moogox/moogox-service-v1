@@ -24,6 +24,7 @@ router.post("/order/new", (req, res) => {
         plat: req.body.plat,
         orderDescription: req.body.orderDescription,
         status: req.body.status,
+        paymentStatus: req.body.paymentStatus,
         totalPayment: req.body.totalPayment,
         paymentMethod: req.body.paymentMethod,
       });

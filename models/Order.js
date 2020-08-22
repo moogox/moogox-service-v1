@@ -42,6 +42,10 @@ const OrderSchema = new Schema({
     type: String,
     required: true,
   },
+  paymentStatus: {
+    type: Boolean,
+    required: true,
+  },
   totalPayment: {
     type: String,
     required: true,
