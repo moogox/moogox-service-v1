@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const Refund = new Schema({
+const RefundSchema = new Schema({
   user: {
     type: String,
     required: true,
@@ -12,4 +12,4 @@ const Refund = new Schema({
   },
 });
 
-module.exports = Refund = mongoose.model("refunds", Refund);
+module.exports = Refund = mongoose.model("refunds", RefundSchema);

@@ -45,6 +45,7 @@ router.post("/login", (req, res) => {
   });
 });
 
+
 router.post("/register", (req, res) => {
   User.findOne({
     email: req.body.email,

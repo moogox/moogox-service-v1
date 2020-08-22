@@ -43,6 +43,18 @@ router.post("/order/new", (req, res) => {
     });
 });
 
+router.post("/order/get", (req, res) => {
+  Order.findOne({
+    _id: req.body.id,
+  })
+    .then((orderResult) => {
+      res.json({ orderResult });
+    })
+    .catch((err) => {
+      res.status(404);
+    });
+});
+
 router.post("/order/list", (req, res) => {
   User.findOne({
     id: req.body.userId,
