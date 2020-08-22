@@ -10,8 +10,6 @@ const Wallet = require("../../models/Wallet");
 router.post("/login", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
-
-  //find user by email
   User.findOne({ email }).then((user) => {
     if (!user) {
       return res.status(404).json({ email: "Email Not Found" });
